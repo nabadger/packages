@@ -37,10 +37,3 @@ jobs:
           registry: registry-1.docker.io
           tag_with_ref: true
           tag_with_sha: true
-      - name: "Build alpine packages"
-        uses: docker://cloudposse/packages-apkbuild:${{matrix.alpine}}
-        with:
-          args: "sh -c 'make -C /packages/vendor/terraform build'"
-        env:
-          APK_PACKAGES_PATH: /packages/artifacts/${{matrix.alpine}}
-
