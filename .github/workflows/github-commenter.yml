@@ -89,7 +89,6 @@ jobs:
       # Publish the artifacts
       - name: "Push artifact to package repository"
         if: steps.config.outputs.package_enabled == 'true'
-        id: push
         uses: cloudsmith-io/action@v0.5.1
         with:
           api-key: ${{ secrets.CLOUDSMITH_API_KEY }}
@@ -106,7 +105,6 @@ jobs:
       # Publish the artifacts
       - name: "Push artifact to package repository"
         if: steps.config.outputs.package_enabled == 'true'
-        id: push
         uses: cloudsmith-io/action@v0.5.1
         with:
           api-key: ${{ secrets.CLOUDSMITH_API_KEY }}
